@@ -220,11 +220,6 @@ a:hover{color:var(--orange-deep);}
       <button type="button" onClick="{{ toggleClips }}" style="border:2px solid var(--navy);background:transparent;color:var(--navy);padding:12px 28px;border-radius:999px;font-family:var(--font-display);font-weight:700;font-size:15px;cursor:pointer;margin-bottom:28px;">{{ clipsToggleLabel }}</button>
       <sc-if value="{{ showAllClips }}" hint-placeholder-val="{{ false }}">
         <div>
-          <h3 style="font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--text-soft);margin:0 0 14px;text-align:left;">Горизонтальные</h3>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:32px;">
-            <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-soft);position:relative;"><video controls="" playsinline="" preload="none" poster="../assets/landscape-1-poster.jpg" style="width:100%;aspect-ratio:16/9;display:block;background:#000;object-fit:cover;"><source src="../assets/landscape-1.mp4" type="video/mp4"></video><button type="button" onClick="{{ playVideo }}" aria-label="Смотреть видео" style="position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.55);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;"><svg viewBox="0 0 24 24" width="22" height="22" style="margin-left:3px;"><path d="M8 5v14l11-7z" fill="#fff"></path></svg></button></div>
-          </div>
-          <h3 style="font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--text-soft);margin:0 0 14px;text-align:left;">Вертикальные</h3>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;">
             <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-soft);position:relative;"><video controls="" playsinline="" preload="none" poster="../assets/featured-director-poster.jpg" style="width:100%;aspect-ratio:9/16;display:block;background:#000;object-fit:cover;"><source src="../assets/featured-director.mp4" type="video/mp4"></video><button type="button" onClick="{{ playVideo }}" aria-label="Смотреть видео" style="position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.55);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;"><svg viewBox="0 0 24 24" width="22" height="22" style="margin-left:3px;"><path d="M8 5v14l11-7z" fill="#fff"></path></svg></button></div>
             <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-soft);position:relative;"><video controls="" playsinline="" preload="none" poster="../assets/portrait-2-poster.jpg" style="width:100%;aspect-ratio:9/16;display:block;background:#000;object-fit:cover;"><source src="../assets/portrait-2.mp4" type="video/mp4"></video><button type="button" onClick="{{ playVideo }}" aria-label="Смотреть видео" style="position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.55);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;"><svg viewBox="0 0 24 24" width="22" height="22" style="margin-left:3px;"><path d="M8 5v14l11-7z" fill="#fff"></path></svg></button></div>
@@ -371,7 +366,7 @@ class Component extends DCLogic {
       showAllClips: this.state.showAllClips,
       toggleClips: () => this.toggleClips(),
       playVideo: (e) => this.playVideo(e),
-      clipsToggleLabel: this.state.showAllClips ? 'Скрыть остальные видео' : 'Показать все видео (7)',
+      clipsToggleLabel: this.state.showAllClips ? 'Скрыть остальные видео' : 'Показать все видео (6)',
       refPosters: this._sectionRefs.posters,
       refTransparency: this._sectionRefs.transparency,
       refFooter: this._sectionRefs.footer,
