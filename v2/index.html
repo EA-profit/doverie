@@ -328,9 +328,22 @@ class Component extends DCLogic {
   playVideo(e) {
     const btn = e.currentTarget;
     const video = btn.previousElementSibling;
-    if (video && video.tagName === 'VIDEO') {
+    if (!video || video.tagName !== 'VIDEO') return;
+    const svg = btn.querySelector('svg');
+    const showPlayIcon = () => {
+      svg.innerHTML = '<path d="M8 5v14l11-7z" fill="#fff"></path>';
+      btn.style.background = 'rgba(0,0,0,0.55)';
+      btn.setAttribute('aria-label', 'Смотреть видео');
+    };
+    if (video.paused) {
       video.play();
-      btn.style.display = 'none';
+      svg.innerHTML = '<rect x="6" y="5" width="4" height="14" fill="#fff"></rect><rect x="14" y="5" width="4" height="14" fill="#fff"></rect>';
+      btn.style.background = 'rgba(0,0,0,0.35)';
+      btn.setAttribute('aria-label', 'Остановить видео');
+      video.addEventListener('ended', showPlayIcon, { once: true });
+    } else {
+      video.pause();
+      showPlayIcon();
     }
   }
 
